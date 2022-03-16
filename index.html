@@ -19,9 +19,20 @@
     //     console.log(`The value you entered is: ${e.target.value}`);
     // }); //Change
 
-    inputElement.addEventListener('input', function (f){
+    inputElement.addEventListener('input', function (f) {
         console.log(`The value you just typed is ${f.target.value}`)
     }); //Input
+
+    const parentElement = document.getElementById('parent');
+
+    buttonElement.addEventListener('click', function (e) {
+        console.log(`You clicked on my button!`)
+        e.stopPropagation();
+    })
+    parentElement.addEventListener('click', function (e) {
+        console.log(`You clicked on the parent containing div.`)
+        e.stopPropagation();
+    })
 </script>
 </body>
 </html>
