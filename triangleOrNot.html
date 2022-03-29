@@ -45,8 +45,8 @@
         let sideA = +a.value;
         let sideB = +b.value;
         let sideC = +c.value;
-        ans.classList.remove('hidden');
-        if (~checkIsValid(sudeA) || !checkIsValid(sideB) || !checkIsValid(sideC)) {
+        ans.classList.remove("hidden");
+        if (checkIsValid(sideA) || !checkIsValid(sideB) || !checkIsValid(sideC)) {
             ans.textContent = 'Invalid Inputs';
             return;
         }
@@ -62,7 +62,7 @@
         b.value = '';
         c.value = '';
         ans.textContent = '';
-        ans.textContent.add('hidden');
+        ans.textContent.add("hidden");
     })
 
     function checkIsTri(num1, num2, num3) {
