@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insertPractice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h3>What is this?</h3>
+        <h4>I don't want this</h4>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    //    Replace contents of HTML tag using innerHTML
+    content.innerHTML = '<h1><a href="https://lttstore.com" target="_blank">lttstore.com</a></h1> <h4>He sells some good stuff, check him out.</h4>';
+
+    //    Add a new element to the existing elements
+    const linus = document.createElement('h1');
+    linus.innerHTML = 'Check out the new merch!'
+    content.appendChild(linus);
+    const buyIt = document.createElement('h4');
+    buyIt.innerHTML = 'Nick will cry.';
+    content.appendChild(buyIt);
+    const begging = document.createElement('h5');
+    begging.innerHTML = 'Pretty please...';
+    content.appendChild(begging);
+
+    //    add to the top along with everything else
+    const hi = document.createElement('h1');
+    hi.innerHTML = 'Welcome!';
+    content.insertAdjacentElement('afterbegin', hi);  //After the beginning of element
+    content.insertAdjacentElement('beforebegin', hi); //Above the element
+    content.insertAdjacentElement('beforeend', hi); //At the end of element
+    content.insertAdjacentElement('afterend', hi); //After the end of element
+
+</script>
+</body>
+</html>
