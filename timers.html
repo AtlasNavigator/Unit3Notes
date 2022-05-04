@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <button id="trigger">setTimeout</button>
+        <button id="interval">setInterval</button>
+        <button id="cancel">Cancel Repeat</button>
+    </div>
+</div>
+
+<script>
+    const myButton = document.getElementById("trigger");
+    const repeatButton = document.getElementById("interval");
+    const cancelButton = document.getElementById("cancel");
+    let interval;
+
+    myButton.addEventListener('click', function () {
+        //    Happens in milleseconds (ms) or 1/1000 of a second
+        setTimeout(function () {
+            console.log("The button was clicked one second ago.")
+        }, 1000);
+
+        //    Not a timeout, so it does not wait
+        console.log("It just happens!");
+    })
+
+    repeatButton.addEventListener('click', function () {
+        if (!interval) {
+            interval = setInterval(function () {
+                console.log(`I happen every second.`)
+            }, 1000);
+        }
+    });
+
+    // repeatButton.addEventListener('click', function(){
+    //     setInterval(function(){
+    //         console.log("I happen every second.")
+    //     }, 1000);
+    // })
+
+    cancelButton.addEventListener('click', function () {
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        }
+    })
+</script>
+</body>
+</html>
